@@ -5,6 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sarjana Warkop</title>
     <script src="https://unpkg.com/htmx.org@1.9.2"></script>
+    <script src="script.js"></script>
+
+    <!-- Optional: Add smooth entrance animation -->
+    <style>
+      .detailed-menu-card {
+        animation: fadeIn 0.3s ease-in-out;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+    </style>
     <link
       href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap"
       rel="stylesheet"
@@ -126,8 +143,67 @@
         z-index: 3;
       }
 
+      .menu-hover a {
+        color: var(--bone-white);
+        text-decoration: underline;
+        display: block;
+        margin-top: 0.5rem;
+      }
+
       .menu-item:hover .menu-hover {
         bottom: 0;
+      }
+
+      .detailed-menu-card {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.7);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 10;
+      }
+
+      .detailed-menu-content {
+        background-color: var(--bone-white);
+        border-radius: 20px;
+        width: 90%;
+        max-width: 800px;
+        overflow: hidden;
+        color: #000;
+      }
+
+      .detailed-header {
+        background: linear-gradient(
+            rgba(123, 30, 30, 0.8),
+            rgba(123, 30, 30, 0.8)
+          ),
+          url("https://picsum.photos/800/200");
+        background-size: cover;
+        background-position: center;
+        padding: 2rem;
+        color: var(--bone-white);
+        text-align: center;
+      }
+
+      .detailed-description {
+        padding: 1rem 2rem;
+      }
+
+      .detailed-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 1rem 0;
+      }
+
+      .detailed-table th,
+      .detailed-table td {
+        border: 1px solid var(--dark-red);
+        padding: 0.5rem 1rem;
+        text-align: left;
       }
 
       .team {
@@ -135,7 +211,7 @@
         background-image: url("https://images.unsplash.com/photo-1525610553991-2bede1a236e2");
         background-size: cover;
         background-position: center;
-        height: 600px;
+        height: 400px;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -145,7 +221,7 @@
 
       .team .overlay {
         background-color: rgba(0, 0, 0, 0.5);
-        padding: 5rem;
+        padding: 2rem;
       }
 
       footer {

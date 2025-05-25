@@ -1,0 +1,68 @@
+[
+  {
+    "category": "Nasi",
+    "description": "Nasi putih hangat, cocok untuk segala jenis lauk.",
+    "cardImage": "https://picsum.photos/400/300?random=1",
+    "headerImage": "https://picsum.photos/seed/nasi/800/400",
+    "startPrice": "Rp12,000",
+    "menuItems": [
+      { "name": "Nasi Goreng", "price": "20K" },
+      { "name": "Sate Ayam", "price": "25K" }
+    ]
+  },
+  {
+    "category": "Mie",
+    "description": "Mie instan atau rebus dengan berbagai topping pilihan.",
+    "cardImage": "https://picsum.photos/400/300?random=2",
+    "headerImage": "https://picsum.photos/seed/mie-header/800/400",
+    "startPrice": "Rp8,000",
+    "menuItems": [
+      { "name": "Mie Goreng", "price": "10K" },
+      { "name": "Mie Rebus", "price": "12K" }
+    ]
+  },
+  {
+    "category": "Roti",
+    "description": "Roti bakar manis, asin, dan berbagai varian isi.",
+    "cardImage": "https://picsum.photos/400/300?random=3",
+    "headerImage": "https://picsum.photos/seed/roti/800/400",
+    "startPrice": "Rp10,000",
+    "menuItems": [
+      { "name": "Roti Bakar Coklat", "price": "15K" },
+      { "name": "Roti Bakar Keju", "price": "18K" }
+    ]
+  },
+  {
+    "category": "Minuman",
+    "description": "Minuman segar untuk menemani waktu santai Anda.",
+    "cardImage": "https://picsum.photos/400/300?random=4",
+    "headerImage": "https://picsum.photos/seed/minuman/800/400",
+    "startPrice": "Rp5,000",
+    "menuItems": [
+      { "name": "Es Teh", "price": "5K" },
+      { "name": "Kopi Hitam", "price": "10K" }
+    ]
+  },
+  {
+    "category": "Cemilan",
+    "description": "Cemilan ringan untuk menemani waktu santai.",
+    "cardImage": "https://picsum.photos/400/300?random=5",
+    "headerImage": "https://picsum.photos/seed/cemilan/800/400",
+    "startPrice": "Rp7,000",
+    "menuItems": [
+      { "name": "Keripik Singkong", "price": "7K" },
+      { "name": "Pisang Goreng", "price": "10K" }
+    ]
+  },
+  {
+    "category": "Sarapan",
+    "description": "Menu sarapan sehat dan bergizi.",
+    "cardImage": "https://picsum.photos/400/300?random=6",
+    "headerImage": "https://picsum.photos/seed/sarapan/800/400",
+    "startPrice": "Rp15,000",
+    "menuItems": [
+      { "name": "Bubur Ayam", "price": "15K" },
+      { "name": "Nasi Uduk", "price": "18K" }
+    ]
+  }
+]
