@@ -282,9 +282,18 @@ iframe {
   .menu-grid {
     grid-template-columns: repeat(2, 1fr);
   }
+  .team .overlay {
+    padding: 2rem;
+    margin: auto;
+  }
 }
 
 @media (max-width: 767px) {
+  .team .overlay {
+    padding: 2rem;
+    margin: auto;
+  }
+
   .menu-grid {
     grid-template-columns: 1fr;
   }
