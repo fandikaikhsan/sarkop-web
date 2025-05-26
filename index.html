@@ -48,14 +48,12 @@
     </section>
 
     <!-- Footer -->
-    <footer>
-      <div>
-        <h3>Contact & Location</h3>
-        <p>Email: sarjanawarkop@example.com | Phone: +62 812 3456 7890</p>
-      </div>
-      <iframe
-        src="https://maps.google.com/maps?q=jakarta&t=&z=13&ie=UTF8&iwloc=&output=embed"
-      ></iframe>
+    <footer
+      hx-get="/components/footer.html"
+      hx-trigger="load"
+      hx-swap="outerHTML"
+    >
+      <!-- Footer will be loaded here -->
     </footer>
     <script src="/assets/js/main.js"></script>
   </body>
