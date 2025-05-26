@@ -1,0 +1,130 @@
+<div class="menu-grid">
+  <div
+    class="menu-item"
+    data-description="Nasi putih hangat, cocok untuk segala jenis lauk."
+    data-header="https://picsum.photos/seed/nasi/800/400"
+    data-menu='[{"name":"Nasi Goreng","price":"20K"},{"name":"Sate Ayam","price":"25K"}]'
+    style="background-image: url('https://picsum.photos/400/300?random=1')"
+  >
+    <div class="menu-overlay">
+      <h3>Nasi</h3>
+      <p>Start from: Rp12,000</p>
+    </div>
+  </div>
+  <div
+    class="menu-item"
+    data-description="Mie instan atau rebus dengan berbagai topping pilihan."
+    data-header="https://picsum.photos/seed/mie-header/800/400"
+    data-menu='[{"name":"Mie Goreng","price":"10K"},{"name":"Mie Rebus","price":"12K"}]'
+    style="background-image: url('https://picsum.photos/400/300?random=2')"
+  >
+    <div class="menu-overlay">
+      <h3>Mie</h3>
+      <p>Start from: Rp8,000</p>
+    </div>
+  </div>
+  <div
+    class="menu-item"
+    data-description="Roti bakar manis, asin, dan berbagai varian isi."
+    data-header="https://picsum.photos/seed/roti/800/400"
+    data-menu='[{"name":"Roti Bakar Coklat","price":"15K"},{"name":"Roti Bakar Keju","price":"18K"}]'
+    style="background-image: url('https://picsum.photos/400/300?random=3')"
+  >
+    <div class="menu-overlay">
+      <h3>Roti</h3>
+      <p>Start from: Rp10,000</p>
+    </div>
+  </div>
+  <div
+    class="menu-item"
+    data-description="Minuman segar untuk menemani waktu santai Anda."
+    data-header="https://picsum.photos/seed/minuman/800/400"
+    data-menu='[{"name":"Es Teh","price":"5K"},{"name":"Kopi Hitam","price":"10K"}]'
+    style="background-image: url('https://picsum.photos/400/300?random=4')"
+  >
+    <div class="menu-overlay">
+      <h3>Minuman</h3>
+      <p>Start from: Rp5,000</p>
+    </div>
+  </div>
+  <div
+    class="menu-item"
+    data-description="Cemilan ringan untuk menemani waktu santai."
+    data-header="https://picsum.photos/seed/cemilan/800/400"
+    data-menu='[{"name":"Keripik Singkong","price":"7K"},{"name":"Pisang Goreng","price":"10K"}]'
+    style="background-image: url('https://picsum.photos/400/300?random=5')"
+  >
+    <div class="menu-overlay">
+      <h3>Cemilan</h3>
+      <p>Start from: Rp7,000</p>
+    </div>
+  </div>
+  <div
+    class="menu-item"
+    data-description="Menu sarapan sehat dan bergizi."
+    data-header="https://picsum.photos/seed/sarapan/800/400"
+    data-menu='[{"name":"Bubur Ayam","price":"15K"},{"name":"Nasi Uduk","price":"18K"}]'
+    style="background-image: url('https://picsum.photos/400/300?random=6')"
+  >
+    <div class="menu-overlay">
+      <h3>Sarapan</h3>
+      <p>Start from: Rp15,000</p>
+    </div>
+  </div>
+</div>
+<script>
+  // Menu item click handler for detail card
+  document.addEventListener("DOMContentLoaded", function () {
+    document.body.addEventListener("click", function (e) {
+      const item = e.target.closest(".menu-item")
+      if (item) {
+        const existingOverlay = document.querySelector(".detailed-menu-card")
+        if (existingOverlay) existingOverlay.remove()
+
+        const description = item.dataset.description
+        const menuData = JSON.parse(item.dataset.menu || "[]")
+        const headerImage = item.dataset.header
+        const category = item.querySelector("h3").textContent
+
+        const overlay = document.createElement("div")
+        overlay.className = "detailed-menu-card"
+        overlay.innerHTML = `
+          <div class="detailed-menu-content" style="position:relative;">
+            <button class="close-button" style="position:absolute;top:10px;right:10px;font-size:2rem;background:none;border:none;cursor:pointer;">&times;</button>
+            <div class="detailed-header" style="background-image: url('${headerImage}')">
+              <h2>${category}</h2>
+            </div>
+            <div class="detailed-description">
+              <p>${description}</p>
+              <table class="detailed-table">
+                <thead>
+                  <tr>
+                    <th>Menu Item</th>
+                    <th>Price</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  ${menuData
+                    .map(
+                      (menuItem) =>
+                        `<tr><td>${menuItem.name}</td><td>${menuItem.price}</td></tr>`
+                    )
+                    .join("")}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        `
+        overlay.addEventListener("click", function (evt) {
+          if (
+            evt.target === overlay ||
+            evt.target.classList.contains("close-button")
+          ) {
+            overlay.remove()
+          }
+        })
+        document.body.appendChild(overlay)
+      }
+    })
+  })
+</script>
