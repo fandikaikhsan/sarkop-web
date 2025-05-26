@@ -40,10 +40,53 @@ body {
   font-size: 3rem;
   color: var(--bone-white);
   position: absolute;
+  text-align: center;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   text-shadow: 2px 2px 8px #000;
+}
+
+.scroll-arrow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2.5rem;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 5vh;
+  z-index: 2;
+}
+
+.scroll-arrow .arrow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 56px;
+  height: 56px;
+  border: 3px solid var(--bone-white);
+  border-radius: 50%;
+  color: var(--bone-white);
+  font-size: 2rem;
+  background: rgba(255, 255, 255, 0.08);
+  animation: bounce 1.5s infinite;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  transition: background 0.2s;
+}
+
+.scroll-arrow .arrow:hover {
+  background: rgba(253, 246, 227, 0.2);
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(18px);
+  }
 }
 
 .menu-grid {
@@ -172,7 +215,7 @@ body {
 }
 
 .team .overlay {
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.7);
   height: 100%;
   width: 100%;
   text-align: center;
@@ -180,7 +223,8 @@ body {
 
 .team h2 {
   font-size: 1.5rem;
-  margin-top: 10%;
+  margin-top: 6%;
+  margin-bottom: 1rem;
 }
 
 footer {
@@ -212,6 +256,11 @@ iframe {
     grid-template-columns: repeat(3, 1fr);
   }
 
+  .team .overlay p {
+    width: 50%;
+    margin: auto;
+  }
+
   footer {
     flex-direction: row;
     justify-content: space-around;
@@ -238,5 +287,14 @@ iframe {
 @media (max-width: 767px) {
   .menu-grid {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .scroll-arrow .arrow {
+    width: 40px;
+    height: 40px;
+    font-size: 1.3rem;
+    border-width: 2px;
   }
 }
