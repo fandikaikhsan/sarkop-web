@@ -5,238 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sarjana Warkop</title>
     <script src="https://unpkg.com/htmx.org@1.9.2"></script>
-    <script src="script.js"></script>
-
-    <!-- Optional: Add smooth entrance animation -->
-    <style>
-      .detailed-menu-card {
-        animation: fadeIn 0.3s ease-in-out;
-      }
-
-      @keyframes fadeIn {
-        from {
-          opacity: 0;
-        }
-        to {
-          opacity: 1;
-        }
-      }
-    </style>
     <link
       href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap"
       rel="stylesheet"
     />
-    <style>
-      :root {
-        --dark-red: #7b1e1e;
-        --bone-white: #fdf6e3;
-      }
-
-      * {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-      }
-
-      body {
-        font-family: "Playfair Display", serif;
-        background-color: var(--dark-red);
-        color: var(--bone-white);
-      }
-
-      .section {
-        padding: 3rem 1rem;
-        text-align: center;
-      }
-
-      .hero {
-        position: relative;
-        height: 100vh;
-      }
-
-      .hero video {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        position: absolute;
-        top: 0;
-        left: 0;
-        z-index: -1;
-        filter: brightness(0.4);
-      }
-
-      .hero h1 {
-        font-size: 3rem;
-        color: var(--bone-white);
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        text-shadow: 2px 2px 8px #000;
-      }
-
-      .menu-grid {
-        display: grid;
-        gap: 1rem;
-      }
-
-      @media (min-width: 1024px) {
-        .menu-grid {
-          grid-template-columns: repeat(3, 1fr);
-        }
-      }
-
-      @media (min-width: 768px) and (max-width: 1023px) {
-        .menu-grid {
-          grid-template-columns: repeat(2, 1fr);
-        }
-      }
-
-      @media (max-width: 767px) {
-        .menu-grid {
-          grid-template-columns: 1fr;
-        }
-      }
-
-      .menu-item {
-        position: relative;
-        background-size: cover;
-        background-position: center;
-        height: 250px;
-        overflow: hidden;
-        border-radius: 10px;
-        cursor: pointer;
-      }
-
-      .menu-overlay {
-        position: absolute;
-        top: 66%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        text-align: center;
-        color: var(--bone-white);
-        text-shadow: 2px 2px 4px #000;
-        z-index: 2;
-      }
-
-      .menu-item::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.4);
-        z-index: 1;
-      }
-
-      .menu-hover {
-        position: absolute;
-        bottom: -100%;
-        left: 0;
-        width: 100%;
-        background-color: var(--dark-red);
-        color: var(--bone-white);
-        padding: 1rem;
-        text-align: center;
-        transition: all 0.4s ease-in-out;
-        z-index: 3;
-      }
-
-      .menu-hover a {
-        color: var(--bone-white);
-        text-decoration: underline;
-        display: block;
-        margin-top: 0.5rem;
-      }
-
-      .menu-item:hover .menu-hover {
-        bottom: 0;
-      }
-
-      .detailed-menu-card {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100vw;
-        height: 100vh;
-        background-color: rgba(0, 0, 0, 0.7);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        z-index: 10;
-      }
-
-      .detailed-menu-content {
-        background-color: var(--bone-white);
-        border-radius: 20px;
-        width: 90%;
-        max-width: 800px;
-        overflow: hidden;
-        color: #000;
-      }
-
-      .detailed-header {
-        background: linear-gradient(
-            rgba(123, 30, 30, 0.8),
-            rgba(123, 30, 30, 0.8)
-          ),
-          url("https://picsum.photos/800/200");
-        background-size: cover;
-        background-position: center;
-        padding: 2rem;
-        color: var(--bone-white);
-        text-align: center;
-      }
-
-      .detailed-description {
-        padding: 1rem 2rem;
-      }
-
-      .detailed-table {
-        width: 100%;
-        border-collapse: collapse;
-        margin: 1rem 0;
-      }
-
-      .detailed-table th,
-      .detailed-table td {
-        border: 1px solid var(--dark-red);
-        padding: 0.5rem 1rem;
-        text-align: left;
-      }
-
-      .team {
-        position: relative;
-        background-image: url("https://images.unsplash.com/photo-1525610553991-2bede1a236e2");
-        background-size: cover;
-        background-position: center;
-        height: 400px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: var(--bone-white);
-        text-align: center;
-      }
-
-      .team .overlay {
-        background-color: rgba(0, 0, 0, 0.5);
-        padding: 2rem;
-      }
-
-      footer {
-        background-color: #5a1616;
-        color: var(--bone-white);
-        padding: 2rem 1rem;
-        text-align: center;
-      }
-
-      iframe {
-        width: 100%;
-        height: 250px;
-        border: 0;
-      }
-    </style>
+    <link rel="stylesheet" href="/assets/css/style.css" />
   </head>
   <body>
     <!-- Hero Section -->
@@ -276,11 +49,14 @@
 
     <!-- Footer -->
     <footer>
-      <h3>Contact & Location</h3>
-      <p>Email: sarjanawarkop@example.com | Phone: +62 812 3456 7890</p>
+      <div>
+        <h3>Contact & Location</h3>
+        <p>Email: sarjanawarkop@example.com | Phone: +62 812 3456 7890</p>
+      </div>
       <iframe
         src="https://maps.google.com/maps?q=jakarta&t=&z=13&ie=UTF8&iwloc=&output=embed"
       ></iframe>
     </footer>
+    <script src="/assets/js/main.js"></script>
   </body>
 </html>
